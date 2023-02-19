@@ -1,0 +1,181 @@
+/* GENERAL */
+
+:root {
+    --white: #FFF; 
+    --yellow: #FED385;
+    --grey: #F2F2F2;
+    --tiny-grey: #D9D9D9;
+    --blue: #0065FC; 
+    --black: #000000;
+    --light-blue: #DEEBFF;
+    --blue: #0065FC; 
+    --black: #000000;
+  }
+
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin-left: 55px;
+    margin-right: 55px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+/* Couleurs de fonds */
+
+.bleu {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.gris {
+    background: var(--grey);
+}
+
+/* Partie Header */
+
+header {
+    padding-top: 44px;
+    padding-bottom: 64px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header >ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+header >ul >li >a {
+    padding: 0 30px;
+    padding-top: 40px;
+}
+
+header >ul >li >a:hover {
+    color: var(--blue);
+    border-top: solid var(--blue);
+}
+
+#logo {
+    width: 61px;
+    height: 19px;
+}
+
+
+
+/* Partie Main */
+
+    /* Sous partie Recherche */
+
+.recherche >p {
+    padding-bottom: 20px;
+    padding-top: 8px;
+}
+
+.barrecherche {
+    width: 430px;
+    border: 1px solid var(--grey);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.barrecherche >div {
+    padding: 15px;
+}
+
+.fa-location-dot {
+    color:var(--black);
+    font-size: 20px;
+}
+
+.filtres {
+    padding: 36px 0;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.choix span {
+    margin: 10px;
+    padding: 15px;
+    border-radius: 25px;
+    border: 2px solid var(--tiny-grey);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.choix span i {
+    margin: 0 16px 0 0;
+    color: var(--blue);
+    font-size: 22px;
+}
+
+.choix label {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.choix label input[type="checkbox"]:checked ~ span {
+    background: var(--light-blue);
+}
+
+    /* Sous partie Hébergement */
+
+.hebergement {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hebergement >div {
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.ville {
+    width: 60%;
+}
+
+.populaire {
+    width: 25%;
+}
+
+    /* Sous partie Acivités */
+
+
+
+/* Partie Footer */
+
+footer >section {
+    padding: 45px 70px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.afooter {
+    width: 35%;
+}
