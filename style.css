@@ -10,8 +10,6 @@
     --blue: #0065FC; 
     --black: #000000;
     --light-blue: #DEEBFF;
-    --blue: #0065FC; 
-    --black: #000000;
   }
 
 * {
@@ -21,10 +19,10 @@
 }
 
 body {
-    margin-left: 55px;
-    margin-right: 55px;
+    margin: 0 20px;
     font-size: 16px;
     font-weight: 400;
+    max-width: 1400px;
 }
 
 a {
@@ -39,9 +37,41 @@ h2 {
     font-size: 18px;
 }
 
-.mini {
-    font-size: 14px;
+/*************************************/
+/* DRY */
+
+.hidden {
+    overflow: hidden;
 }
+
+.flex-sb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.flex-center {
+    display: flex;    
+    align-items: center;
+}
+
+.radius20 {
+    border-radius: 20px;
+}
+
+.shadow {
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.3));
+}
+
+.cover {
+    object-fit: cover;   /* pour faire contenir dans l'espace et qu'elle soit tronquée, non étirée */
+}
+
+/*************************************/
+
 
 /* Couleurs de fonds */
 
@@ -59,8 +89,6 @@ h2 {
 header {
     padding-top: 44px;
     padding-bottom: 64px;
-    display: flex;
-    justify-content: space-between;
 }
 
 header >ul{
@@ -100,42 +128,37 @@ header >ul >li >a:hover {
     font-size: 24px;
 }
 
-#plus {
-    padding-bottom: 40px;
-    padding-top: 30px;
-}
-
-#plus i {
-    padding-right: 10px;
-}
 
 .barrecherche {
-    width: 430px;
-    
+    width: 430px;    
     border-radius: 15px;
-    overflow: hidden;
+}
+
+.barrecherche form {
     display: flex;
-    justify-content: space-between;
 }
 
-.barrecherche >div {
-    padding: 15px;
-}
-
-.barrecherche >div:nth-child(1) {
-    width: 50px;
+label {
+    width: 100%;
+    height: 50px;
     text-align: center;
+    border-radius: 15px 0 0 15px;
+    justify-content: center;
 }
 
-.barrecherche >div:nth-child(2) {
-    border: 1px solid var(--grey);
-    display: flex;
-    align-items: center;
+label >i {
+    margin: 0 15px 0 15px;
 }
 
-.barrecherche >div:nth-child(3) {
-    width: 130px;
-    text-align: center;
+button {
+    width: 100%;
+    border-radius: 0 15px 15px 0;
+    border: none;
+    justify-content: center;
+}
+
+button >h2 {
+    margin: 0 15px 0 15px;
 }
 
 .fa-location-dot {
@@ -143,51 +166,72 @@ header >ul >li >a:hover {
     font-size: 20px;
 }
 
+.fa-magnifying-glass {
+    font-size: 20px;
+}
+
 form input {
-    border: 0px;
+    border: 1px solid var(--grey);
     font-size: 18px;
     font-weight: bold;
 }
 
-.filtres {
-    padding: 30px 0 0 0;
-    width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+#visible2 {
+    display: none;
+    color: var(--white);
 }
 
-.choix span {
+.filtres {
+    padding: 30px 0 0 0;
+}
+
+.filtres >div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.choix div {
     margin: 10px;
     padding: 15px;
     border-radius: 25px;
     border: 2px solid var(--tiny-grey);
-    overflow: hidden;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.choix span i {
+.choix div i {
     margin: 0 16px 0 0;
     color: var(--blue);
     font-size: 22px;
 }
 
-.choix span:hover {
+.choix div:hover {
     background: var(--light-blue);              /*faire passer la bulle en bleu en passant dessus */
 }
 
-    /* Sous partie Hébergement */
-
-#hebergement {
+#plus {
+    padding-bottom: 40px;
+    padding-top: 30px;
     display: flex;
-    justify-content: space-between;
 }
 
-#hebergement >div {
-    border-radius: 20px;
+#plus div {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 100%;
+    border: 1px solid var(--grey);
+    justify-content: center;
+    margin-right: 20px;
 }
+
+#plus div i {
+    text-align: center;
+    color: var(--blue);
+}
+
+    /* Sous partie Hébergement */
 
 .ville {
     width: 60%;
@@ -202,26 +246,17 @@ form input {
     margin-top: 10px;
 }
 
-.ligne {
-    display: flex;
-    justify-content: space-between;    
-}
-
 .chambre {
-    width: 246px;
+    width: 30%;
     height: 199px;
     background: var(--white);
-    border-radius: 20px;
     border: 6px solid var(--white);
-    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
-    overflow: hidden;
     margin-bottom: 30px;
 }
 
 .chambre img {
     width: 100%;
     height: 124px;
-    object-fit: cover;   /* pour faire contenir dans l'espace et qu'elle soit tronquée, non étirée */
 }
 
 .chambre p {
@@ -242,36 +277,23 @@ form input {
     padding: 40px 40px 0 40px;
 }
 
-.populaire >div {
-    display: flex;
-    justify-content: space-between;
-}
-
 .populaire >div >i {
     color: var(--blue);
     font-size: 16px;
 }
 
-.populaire h1 {
-    margin-bottom: 23px;
-}
-
 .colonne {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;    
+    align-items: center;    
     margin-top: 30px;
 }
 
 .colonne .chambre {
-    width: 343px;
+    width: 100%;
     height: 144px;
     display: flex;
     background: var(--white);
-    border-radius: 20px;
     border: 6px solid var(--white);
-    overflow: hidden;
 }
 
 .colonne .chambre >div {
@@ -285,7 +307,6 @@ form input {
 .colonne .chambre img {
     width: 137px;
     height: 100%;
-    object-fit: cover;   /* pour faire contenir dans l'espace et qu'elle soit tronquée, non étirée */
 }
 
 .colonne .chambre p {
@@ -318,20 +339,16 @@ form input {
 .activity {
     width: 302px;
     height: 445px;
-    border-radius: 20px;
     background: var(--white);
-    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
-    overflow: hidden;
 }
 
 .activity img {
     width: 100%;
     height: 390px;
-    object-fit: cover;   /* pour faire contenir dans l'espace et qu'elle soit tronquée, non étirée */
 }
 
 .activity p {
-    padding: 18px 0;
+    padding: 20px 0;
     padding-left: 20px;
 }
 
@@ -347,4 +364,328 @@ footer >section {
 
 .afooter {
     width: 35%;
+}
+
+
+
+
+
+
+/*************************************************************************************/
+
+/* Responsive pour téléphones portables */
+
+@media screen and (max-width: 768px) {
+    
+body {
+    max-width: 100%;
+    margin: auto;
+}
+
+        /* Header pour portables */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: solid var(--light-blue);
+}
+
+header ul {
+    width: 100%;
+    justify-content: space-around;
+}
+
+#logo {
+    margin-bottom: 20px;
+}
+
+header >ul >li >a {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    border-bottom: solid var(--light-blue);
+}
+
+header >ul >li >a:hover {
+    border-bottom: solid var(--blue);
+    border-top: none;
+}
+
+        /* Main pour portables */
+
+        /* Barre de recherche */
+
+main {
+    margin-top: 30px;
+}
+
+.barrecherche {
+    width: 90%;
+}
+
+.recherche {    
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.barrecherche >div:nth-child(3) {
+    width: 50px;
+}
+
+form input {
+    width: 100%;
+}
+
+#visible1 {
+    display: none;
+}
+
+#visible2 {
+    display: flex;
+}
+
+        /* Filtres */
+
+form {
+    width: 70%;
+}
+
+.filtres {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+
+.filtres div {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.filtres .choix {
+    width: 100%;
+}
+
+.choix div {
+    margin: 10px;
+    padding: 15px;
+}
+
+label {
+    width: 30%;
+}
+
+button {
+    width: 30%;
+}
+
+.choix h2 {
+    font-size: 11px;
+}
+
+        /* Hébergement */
+
+#hebergement {
+    flex-direction: column-reverse;
+}
+
+#hebergement >div {
+    border-radius: 0px;
+}
+
+.colonne .chambre {
+    width: 80%;
+}
+
+.ligne .chambre {
+    width: 80%;
+}
+
+.populaire {
+    width: 100%;
+    padding: 40px 0 0 0;
+}
+
+.populaire >div{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.ville {
+    width: 100%;
+    padding: 40px 0 0 0;
+    background: var(--white);
+}
+
+.ville h1 {
+    margin-left: 20px;
+}
+
+.ville h2 {
+    margin-left: 20px;
+}
+
+.ligne {
+    flex-direction: column;
+    align-items: center;
+}
+
+        /* Activités portable */
+
+#activites h1 {
+    margin-left: 20px;
+}
+
+#activites aside >a {
+    margin-bottom: 20px;
+}
+
+.activity {
+    height: 190px;
+    width: 80%;
+}
+
+.activity img {
+    height: 70%;
+}
+
+.activity p {
+    padding: 15px 0 0 15px;
+}
+
+
+    /* Footer portable */
+
+footer >section {
+    padding: 20px 0 0 20px;
+    flex-direction: column;
+}
+
+.afooter {
+    margin: 20px 30px;
+}
+}
+
+.afooter p{
+    margin: 10px 0;
+    width: 80vh;
+}
+
+
+
+
+
+/*************************************************************************************/
+
+/* Responsive pour tablettes */
+
+@media screen and (min-width:768px) and (max-width: 992px) {
+
+body {
+    margin: 0 20px;
+}
+
+.flex-sb {
+    display: flex;
+    justify-content: space-around;
+}
+
+    /* Hebergement tablettes */
+
+#hebergement {
+    flex-direction: column;
+}
+
+#hebergement >div {
+    margin-bottom: 20px;
+}
+
+.ville {
+    width: 100%;
+    padding: 20px 0 0 0;
+}
+
+.ville >h1 {
+    padding-left: 40px;
+}
+
+.ville >h2 {
+    padding: 0 0 20px 40px;
+}
+
+.ligne {
+    justify-content: space-around;
+}
+
+.chambre {
+    width: 25%;
+}
+
+.populaire {
+    width: 100%;
+    padding: 0;
+}
+
+.populaire >div {
+    padding: 0 40px;
+    margin: 34px 0 0 0;
+}
+
+.populaire h1 {
+    margin: 0;
+}
+
+.colonne {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.colonne .chambre {
+    width: 28%;
+}
+
+.colonne .chambre img {
+    width: 40%;
+}
+
+.colonne .chambre >div >p {
+    font-size: 14px;
+    margin: 0 0 0 10px;
+}
+
+.star {
+    padding-top: 40px 0 0 0;
+}
+
+    /* Activités tablettes */
+
+.activity {
+    width: 20%;
+    height: 20%;
+}
+
+.activity a {
+    overflow: hidden;
+}
+
+.activity img {
+    height: 200px;
+}
+
+    /* Footer tablettes */
+
+footer >section {
+    padding: 45px 40px;
+}
+
+}
+
+/********************************/
+@media screen and (min-width:1400px) {
+body {
+    margin: auto;
+}
 }
