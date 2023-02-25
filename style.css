@@ -37,6 +37,10 @@ h2 {
     font-size: 18px;
 }
 
+.mini {
+    font-size: 14px;
+}
+
 /*************************************/
 /* DRY */
 
@@ -236,6 +240,7 @@ form input {
 .ville {
     width: 60%;
     padding: 40px;
+    margin-right: 10px;
 }
 
 .ville h1 {
@@ -334,6 +339,10 @@ form input {
 
 #activites h1 {
     padding: 20px 0;
+}
+
+#activites div a {
+	width: 23%;
 }
 
 .activity {
@@ -500,7 +509,7 @@ button {
     width: 80%;
 }
 
-.ligne .chambre {
+.ville .chambre {
     width: 80%;
 }
 
@@ -528,7 +537,7 @@ button {
     margin-left: 20px;
 }
 
-.ligne {
+.ville aside {
     flex-direction: column;
     align-items: center;
 }
@@ -539,8 +548,17 @@ button {
     margin-left: 20px;
 }
 
+#activites aside {
+    flex-direction: column;
+    align-items: center;
+}
+
 #activites aside >a {
     margin-bottom: 20px;
+}
+
+#activites div a {
+    width: 80%;
 }
 
 .activity {
@@ -588,9 +606,16 @@ body {
     margin: 0 20px;
 }
 
-.flex-sb {
-    display: flex;
-    justify-content: space-around;
+header img {
+    margin-left: 50px;
+}
+
+.choix h2 {
+    font-size: 10px;
+}
+
+.shadow {
+    filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.3));
 }
 
     /* Hebergement tablettes */
@@ -601,6 +626,11 @@ body {
 
 #hebergement >div {
     margin-bottom: 20px;
+}
+
+#hebergement .flex-sb {
+    display: flex;
+    justify-content: space-around;
 }
 
 .ville {
@@ -629,7 +659,9 @@ body {
     padding: 0;
 }
 
-.populaire >div {
+#hebergement .populaire div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
     padding: 0 40px;
     margin: 34px 0 0 0;
 }
@@ -661,12 +693,22 @@ body {
 }
 
     /* Activités tablettes */
-
+    
 .activity {
     width: 20%;
     height: 20%;
 }
 
+.activity p{
+    font-size: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 56px;
+}
+    
 .activity a {
     overflow: hidden;
 }
