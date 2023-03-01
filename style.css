@@ -4,7 +4,6 @@
 
 :root {
     --white: #FFF; 
-    --yellow: #FED385;
     --grey: #F2F2F2;
     --tiny-grey: #D9D9D9;
     --blue: #0065FC; 
@@ -67,7 +66,7 @@ h2 {
 }
 
 .shadow {
-    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 
 .cover {
@@ -95,13 +94,13 @@ header {
     padding-bottom: 64px;
 }
 
-header >ul{
+header ul{
     display: flex;
     justify-content: center;
     list-style-type: none;
 }
 
-header >ul >li >a {
+header ul li a {
     padding: 0 30px;
     padding-top: 40px;
 }
@@ -122,12 +121,12 @@ header >ul >li >a:hover {
 
     /* Sous partie Recherche */
 
-.recherche >p {
+.recherche p {
     padding-bottom: 20px;
     padding-top: 8px;
 }
 
-.recherche >p i{
+.recherche p i{
     color: var(--blue);
     font-size: 24px;
 }
@@ -161,7 +160,7 @@ button {
     justify-content: center;
 }
 
-button >h2 {
+button h2 {
     margin: 0 15px 0 15px;
 }
 
@@ -189,7 +188,7 @@ form input {
     padding: 30px 0 0 0;
 }
 
-.filtres >div {
+.filtres div {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -282,9 +281,16 @@ form input {
     padding: 40px 40px 0 40px;
 }
 
-.populaire >div >i {
+.populaire div i {
     color: var(--blue);
     font-size: 16px;
+}
+
+.populaire aside div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px 0;
 }
 
 .colonne {
@@ -301,10 +307,6 @@ form input {
     border: 6px solid var(--white);
 }
 
-.colonne .chambre >div {
-    margin-top: 10px;
-}
-
 .colonne .chambre >div >p {
     margin-bottom: 7px;
 }
@@ -315,7 +317,7 @@ form input {
 }
 
 .colonne .chambre p {
-    margin: 7px 7px 7px 16px;
+    margin: 7px 0 0 16px;
 }
 
 .colonne .chambre i {
@@ -323,12 +325,12 @@ form input {
     font-size: 12px;
 }
 
-.star {
-    padding-top: 44px;
-}
-
 .colonne .chambre i:nth-child(5) {
     color: var(--grey);      /*pour que la cinquième étoile ait une couleur différente*/
+}
+
+.fa-chart-line {
+    color: var(--blue);
 }
 
     /* Sous partie Acivités */
@@ -357,13 +359,17 @@ form input {
 }
 
 .activity p {
-    padding: 20px 0;
     padding-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
 }
 
 
 
 /* Partie Footer */
+
 
 footer >section {
     padding: 45px 70px;
@@ -372,7 +378,7 @@ footer >section {
 }
 
 .afooter {
-    width: 35%;
+    width: 30%;
 }
 
 
@@ -570,10 +576,6 @@ button {
     height: 70%;
 }
 
-.activity p {
-    padding: 15px 0 0 15px;
-}
-
 
     /* Footer portable */
 
@@ -624,10 +626,6 @@ header img {
     flex-direction: column;
 }
 
-#hebergement >div {
-    margin-bottom: 20px;
-}
-
 #hebergement .flex-sb {
     display: flex;
     justify-content: space-around;
@@ -635,15 +633,32 @@ header img {
 
 .ville {
     width: 100%;
+    margin-bottom: 20px;
     padding: 20px 0 0 0;
 }
 
-.ville >h1 {
+.ville h1 {
     padding-left: 40px;
 }
 
-.ville >h2 {
+.ville h2 {
     padding: 0 0 20px 40px;
+}
+
+.populaire h1 {
+    padding-left: 40px;
+}
+
+.fa-chart-line {
+    padding-right: 20px;
+}
+
+.populaire div {
+    margin-top: 20px;
+}
+
+.populaire aside div {
+    margin: 0;
 }
 
 .ligne {
@@ -662,8 +677,6 @@ header img {
 #hebergement .populaire div:nth-child(1) {
     display: flex;
     justify-content: space-between;
-    padding: 0 40px;
-    margin: 34px 0 0 0;
 }
 
 .populaire h1 {
@@ -683,7 +696,7 @@ header img {
     width: 40%;
 }
 
-.colonne .chambre >div >p {
+.colonne .chambre div p {
     font-size: 14px;
     margin: 0 0 0 10px;
 }
@@ -699,16 +712,6 @@ header img {
     height: 20%;
 }
 
-.activity p{
-    font-size: 16px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 0;
-    padding-bottom: 0;
-    height: 56px;
-}
-    
 .activity a {
     overflow: hidden;
 }
@@ -719,7 +722,7 @@ header img {
 
     /* Footer tablettes */
 
-footer >section {
+footer section {
     padding: 45px 40px;
 }
 
