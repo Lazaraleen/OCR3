@@ -17,10 +17,12 @@
         <div>
             <img src="images/logo/Booki.png" alt="Logo Booki" id="logo">
         </div>
-        <ul>
-            <li><a href="#hebergement">Hébergement</a></li>
-            <li><a href="#activites">Activités</a></li>
-        </ul>
+        <nav>
+            <ul>
+                <li><a href="#hebergement">Hébergement</a></li>
+                <li><a href="#activites">Activités</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -29,12 +31,12 @@
             <p>En plein centre-ville ou en pleine nature</p>
             <article class="barrecherche hidden flex-sb">
                 <form method="get" action="#">
-                    <label for="location" class="gris flex-center cursor">
+                    <label class="gris flex-center cursor">
                         <i class="fa-solid fa-location-dot"></i>
                     </label>
-                    <input type="text" name="Ville" class="flex-center">
+                    <input type="text" name="Ville" value=" Marseille, France" class="flex-center">
                     <button class="bleu flex-center cursor">
-                        <h2 id="visible1">Rechercher</h2> 
+                        <span id="visible1">Rechercher</span> 
                         <i class="fa-solid fa-magnifying-glass" id="visible2"></i>
                     </button>
                 </form>
@@ -43,7 +45,7 @@
                 <div>
                     <h2>Filtres</h2>
                 </div>
-                <div>
+                <div class="filtrerow">
                     <div class="choix">
                         <aside>
                             <div class="hidden cursor"><i class="fa-solid fa-money-bill-wave"></i><h2>Economique</h2></div>
@@ -55,7 +57,7 @@
                         </aside>
                     </div>
                 </div>
-                <div>                    
+                <div class="filtrerow">                    
                     <div class="choix">
                         <aside>
                             <div class="hidden cursor"><i class="fa-solid fa-heart"></i><h2>Romantique</h2></div>

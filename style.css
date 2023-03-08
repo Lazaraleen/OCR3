@@ -26,6 +26,7 @@ body {
 
 a {
     text-decoration: none;
+    color: var(--black);
 }
 
 h1 {
@@ -94,7 +95,7 @@ header {
     padding-bottom: 64px;
 }
 
-header ul{
+header ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
@@ -105,7 +106,7 @@ header ul li a {
     padding-top: 40px;
 }
 
-header >ul >li >a:hover {
+header ul li a:hover {
     color: var(--blue);
     border-top: solid var(--blue);
 }
@@ -149,7 +150,7 @@ label {
     justify-content: center;
 }
 
-label >i {
+label i {
     margin: 0 15px 0 15px;
 }
 
@@ -160,7 +161,7 @@ button {
     justify-content: center;
 }
 
-button h2 {
+span {
     margin: 0 15px 0 15px;
 }
 
@@ -193,6 +194,7 @@ form input {
     flex-direction: row;
     align-items: center;
 }
+
 
 .choix div {
     margin: 10px;
@@ -307,7 +309,7 @@ form input {
     border: 6px solid var(--white);
 }
 
-.colonne .chambre >div >p {
+.colonne .chambre div p {
     margin-bottom: 7px;
 }
 
@@ -371,7 +373,7 @@ form input {
 /* Partie Footer */
 
 
-footer >section {
+footer section {
     padding: 45px 70px;
     display: flex;
     justify-content: flex-start;
@@ -381,6 +383,138 @@ footer >section {
     width: 30%;
 }
 
+
+
+
+/*************************************************************************************/
+
+/* Responsive pour tablettes */
+
+@media screen and (min-width:768px) and (max-width: 992px) {
+
+body {
+    margin: 0 20px;
+}
+
+header img {
+    margin-left: 50px;
+}
+
+.choix h2 {
+    font-size: 10px;
+}
+
+.shadow {
+    filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.3));
+}
+
+    /* Hebergement tablettes */
+
+#hebergement {
+    flex-direction: column;
+}
+
+#hebergement .flex-sb {
+    display: flex;
+    justify-content: space-around;
+}
+
+.ville {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px 0 0 0;
+}
+
+.ville h1 {
+    padding-left: 40px;
+}
+
+.ville h2 {
+    padding: 0 0 20px 40px;
+}
+
+.populaire h1 {
+    padding-left: 40px;
+}
+
+.fa-chart-line {
+    padding-right: 20px;
+}
+
+.populaire div {
+    margin-top: 20px;
+}
+
+.populaire aside div {
+    margin: 0;
+}
+
+.ligne {
+    justify-content: space-around;
+}
+
+.chambre {
+    width: 25%;
+}
+
+.populaire {
+    width: 100%;
+    padding: 0;
+}
+
+#hebergement .populaire div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+}
+
+.populaire h1 {
+    margin: 0;
+}
+
+.colonne {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.colonne .chambre {
+    width: 28%;
+}
+
+.colonne .chambre img {
+    width: 90px;
+}
+
+.colonne .chambre div p {
+    font-size: 14px;
+    margin: 0 0 0 10px;
+}
+
+.star {
+    padding-top: 40px;
+}
+
+    /* Activités tablettes */
+    
+.activity {
+    width: 20%;
+    height: 20%;
+}
+
+.activity a {
+    overflow: hidden;
+}
+
+.activity img {
+    height: 200px;
+}
+
+    /* Footer tablettes */
+
+footer section {
+    padding: 45px 40px;
+}
+
+}
 
 
 
@@ -407,6 +541,9 @@ header {
     border-bottom: solid var(--light-blue);
 }
 
+nav {
+    width: 100%;
+}
 header ul {
     width: 100%;
     justify-content: space-around;
@@ -416,13 +553,13 @@ header ul {
     margin-bottom: 20px;
 }
 
-header >ul >li >a {
+header ul li a {
     padding-top: 0px;
     padding-bottom: 20px;
     border-bottom: solid var(--light-blue);
 }
 
-header >ul >li >a:hover {
+header ul li a:hover {
     border-bottom: solid var(--blue);
     border-top: none;
 }
@@ -437,6 +574,11 @@ main {
 
 .barrecherche {
     width: 90%;
+    margin: auto;
+}
+
+.barrecherche form {
+    width: 100%;
 }
 
 .recherche {    
@@ -444,7 +586,7 @@ main {
     margin-right: 20px;
 }
 
-.barrecherche >div:nth-child(3) {
+.barrecherche div:nth-child(3) {
     width: 50px;
 }
 
@@ -474,10 +616,15 @@ form {
 }
 
 .filtres div {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     padding: 5px;
+}
+
+.filtrerow {
+    display: flex;
+    justify-content: space-around;
 }
 
 .filtres .choix {
@@ -485,8 +632,9 @@ form {
 }
 
 .choix div {
-    margin: 10px;
+    margin: 0;
     padding: 15px;
+    width: 150px;
 }
 
 label {
@@ -598,135 +746,6 @@ footer >section {
 
 
 
-/*************************************************************************************/
-
-/* Responsive pour tablettes */
-
-@media screen and (min-width:768px) and (max-width: 992px) {
-
-body {
-    margin: 0 20px;
-}
-
-header img {
-    margin-left: 50px;
-}
-
-.choix h2 {
-    font-size: 10px;
-}
-
-.shadow {
-    filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.3));
-}
-
-    /* Hebergement tablettes */
-
-#hebergement {
-    flex-direction: column;
-}
-
-#hebergement .flex-sb {
-    display: flex;
-    justify-content: space-around;
-}
-
-.ville {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 20px 0 0 0;
-}
-
-.ville h1 {
-    padding-left: 40px;
-}
-
-.ville h2 {
-    padding: 0 0 20px 40px;
-}
-
-.populaire h1 {
-    padding-left: 40px;
-}
-
-.fa-chart-line {
-    padding-right: 20px;
-}
-
-.populaire div {
-    margin-top: 20px;
-}
-
-.populaire aside div {
-    margin: 0;
-}
-
-.ligne {
-    justify-content: space-around;
-}
-
-.chambre {
-    width: 25%;
-}
-
-.populaire {
-    width: 100%;
-    padding: 0;
-}
-
-#hebergement .populaire div:nth-child(1) {
-    display: flex;
-    justify-content: space-between;
-}
-
-.populaire h1 {
-    margin: 0;
-}
-
-.colonne {
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.colonne .chambre {
-    width: 28%;
-}
-
-.colonne .chambre img {
-    width: 40%;
-}
-
-.colonne .chambre div p {
-    font-size: 14px;
-    margin: 0 0 0 10px;
-}
-
-.star {
-    padding-top: 40px 0 0 0;
-}
-
-    /* Activités tablettes */
-    
-.activity {
-    width: 20%;
-    height: 20%;
-}
-
-.activity a {
-    overflow: hidden;
-}
-
-.activity img {
-    height: 200px;
-}
-
-    /* Footer tablettes */
-
-footer section {
-    padding: 45px 40px;
-}
-
-}
 
 /********************************/
 @media screen and (min-width:1400px) {
