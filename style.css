@@ -373,14 +373,14 @@ form input {
 /* Partie Footer */
 
 
-footer section {
+footer {
     padding: 45px 70px;
     display: flex;
     justify-content: flex-start;
 }
 
 .afooter {
-    width: 30%;
+    width: 33%;
 }
 
 
@@ -510,7 +510,7 @@ header img {
 
     /* Footer tablettes */
 
-footer section {
+footer {
     padding: 45px 40px;
 }
 
@@ -633,7 +633,7 @@ form {
 
 .choix div {
     margin: 0;
-    padding: 15px;
+    padding: 15px 5px;
     width: 150px;
 }
 
@@ -727,7 +727,7 @@ button {
 
     /* Footer portable */
 
-footer >section {
+footer {
     padding: 20px 0 0 20px;
     flex-direction: column;
 }
